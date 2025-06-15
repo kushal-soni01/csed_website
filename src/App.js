@@ -1,6 +1,9 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import TypewriterVideo from "./components/TypewriterVideo";
+import SplitHeading from "./components/SplitHeading";
+import ProjectCard from "./components/ProjectCard";
+import blankImage from "./content/balnkImage.jpg";
 import Footer from "./components/Footer";
 
 function App() {
@@ -8,6 +11,37 @@ function App() {
 		<>
 			<Navbar title="CSED GLAU" />
 			<TypewriterVideo />
+			<SplitHeading title="Projects" />
+			<ProjectCard
+				source={blankImage}
+				error="Project Image"
+				title="Project-1"
+				short="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non."
+				long="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non. Est, velit error? In, accusantium. Maxime rerum nostrum, suscipit dolor ex, consequuntur dolorem quo alias quia ipsum reprehenderit eaque illum, quidem aspernatur."
+			/>
+			<ProjectCard
+				source={blankImage}
+				error="Project Image"
+				title="Project-2"
+				short="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non."
+				long="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non. Est, velit error? In, accusantium. Maxime rerum nostrum, suscipit dolor ex, consequuntur dolorem quo alias quia ipsum reprehenderit eaque illum, quidem aspernatur."
+			/>
+			<SplitHeading title="Events" />
+			<ProjectCard
+				source={blankImage}
+				error="Project Image"
+				title="Event-1"
+				short="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non."
+				long="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non. Est, velit error? In, accusantium. Maxime rerum nostrum, suscipit dolor ex, consequuntur dolorem quo alias quia ipsum reprehenderit eaque illum, quidem aspernatur."
+			/>
+			<ProjectCard
+				source={blankImage}
+				error="Project Image"
+				title="Event-2"
+				short="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non."
+				long="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non. Est, velit error? In, accusantium. Maxime rerum nostrum, suscipit dolor ex, consequuntur dolorem quo alias quia ipsum reprehenderit eaque illum, quidem aspernatur."
+			/>
+			<SplitHeading title="Our Core Members" />
 			<Footer />
 		</>
 	);

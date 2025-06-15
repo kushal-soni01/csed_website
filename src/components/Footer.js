@@ -19,7 +19,7 @@ export default function Footer() {
 				</div>
 				<div className="links" id="link2">
 					<a href="https://www.linkedin.com/company/csed-club-glau/posts/?feedView=all">
-						<i className="fa-brands fa-linkedin"></i>
+						<i className="fa-brands fa-linkedin fa- l"></i>
 					</a>
 				</div>
 				<div className="links" id="link3">
