@@ -1,12 +1,14 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import TypewriterVideo from "./components/TypewriterVideo";
+import Footer from "./components/Footer";
 
 function App() {
 	return (
 		<>
 			<Navbar title="CSED GLAU" />
 			<TypewriterVideo />
+			<Footer />
 		</>
 	);
 }

@@ -31,7 +31,7 @@ export default function TypewriterVideo() {
 				setCharIndex((prev) => prev + 1);
 
 				if (charIndex + 1 === currentWord.length) {
-					setTimeout(() => setIsDeleting(true), 1500); // pause after full word
+					setTimeout(() => setIsDeleting(true), 1500);
 				}
 			} else {
 				setText(currentWord.slice(0, charIndex - 1));
@@ -47,7 +47,7 @@ export default function TypewriterVideo() {
 						setIndex((prev) => (prev + 1) % words.length);
 						setShowText(true);
 						setPauseBetweenWords(false);
-					}, 300); // pause before next word begins
+					}, 200);
 				}
 			}
 		};
