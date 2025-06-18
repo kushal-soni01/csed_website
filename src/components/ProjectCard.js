@@ -1,19 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function ProjectCard(props) {
+	const [flipped, setFlipped] = useState(false);
+	const [hovered, setHovered] = useState(false);
+
+	const handleClick = () => setFlipped(true);
+	const handleMouseLeave = () => {
+		setFlipped(false);
+		setHovered(false);
+	};
+
 	return (
-		<div className="project-card">
-			<div className="card-inner">
-				<div className="card-front">
+		<div
+			className={`card-container ${hovered ? "hovered" : ""} ${
+				flipped ? "flipped" : ""
+			}`}
+			onMouseEnter={() => setHovered(true)}
+			onMouseLeave={handleMouseLeave}
+			onClick={handleClick}
+		>
+			<div className={`card ${flipped ? "flipped" : ""}`}>
+				<div className="card-front" onClick={handleClick}>
 					<img
 						src={props.source}
 						alt={props.error}
-						className="card-img"
+						className="card-image"
 					/>
 					<h3>{props.title}</h3>
 					<p>{props.short}</p>
 				</div>
-				<div className="card-back">
+				<div className="card-back" onClick={handleClick}>
 					<h3>{props.title}</h3>
 					<p>{props.long}</p>
 				</div>

@@ -4,7 +4,64 @@ import TypewriterVideo from "./components/TypewriterVideo";
 import SplitHeading from "./components/SplitHeading";
 import ProjectCard from "./components/ProjectCard";
 import blankImage from "./content/balnkImage.jpg";
+import CoreMembers from "./components/CoreMembers";
+import profile from "./content/profile.png";
 import Footer from "./components/Footer";
+
+const projects = [
+	{
+		source: blankImage,
+		error: "Project Image",
+		title: "Project-1",
+		short: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur ",
+		long: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non. Est, velit error? In, accusantium. Maxime rerum nostrum, suscipit dolor ex, consequuntur dolorem quo alias quia ipsum reprehenderit eaque illum, quidem aspernatur.",
+	},
+	{
+		source: blankImage,
+		error: "Project Image",
+		title: "Project-2",
+		short: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur ",
+		long: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non. Est, velit error? In, accusantium. Maxime rerum nostrum, suscipit dolor ex, consequuntur dolorem quo alias quia ipsum reprehenderit eaque illum, quidem aspernatur.",
+	},
+];
+
+const events = [
+	{
+		source: blankImage,
+		error: "Project Image",
+		title: "Event-1",
+		short: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur ",
+		long: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non. Est, velit error? In, accusantium. Maxime rerum nostrum, suscipit dolor ex, consequuntur dolorem quo alias quia ipsum reprehenderit eaque illum, quidem aspernatur.",
+	},
+	{
+		source: blankImage,
+		error: "Project Image",
+		title: "Event-2",
+		short: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur ",
+		long: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non. Est, velit error? In, accusantium. Maxime rerum nostrum, suscipit dolor ex, consequuntur dolorem quo alias quia ipsum reprehenderit eaque illum, quidem aspernatur.",
+	},
+];
+
+const members = [
+	{
+		name: "Shubh Singhal",
+		post: "President",
+		img: profile,
+		quote: "Leadership is action, not position.",
+	},
+	{
+		name: "Deepansh Goyal",
+		post: "Organizer",
+		img: profile,
+		quote: "Let’s build something amazing!",
+	},
+	{
+		name: "Sparsh Sharma",
+		post: "Vice-President",
+		img: profile,
+		quote: "Together, we grow and innovate.",
+	},
+];
 
 function App() {
 	return (
@@ -12,36 +69,19 @@ function App() {
 			<Navbar title="CSED GLAU" />
 			<TypewriterVideo />
 			<SplitHeading title="Projects" />
-			<ProjectCard
-				source={blankImage}
-				error="Project Image"
-				title="Project-1"
-				short="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non."
-				long="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non. Est, velit error? In, accusantium. Maxime rerum nostrum, suscipit dolor ex, consequuntur dolorem quo alias quia ipsum reprehenderit eaque illum, quidem aspernatur."
-			/>
-			<ProjectCard
-				source={blankImage}
-				error="Project Image"
-				title="Project-2"
-				short="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non."
-				long="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non. Est, velit error? In, accusantium. Maxime rerum nostrum, suscipit dolor ex, consequuntur dolorem quo alias quia ipsum reprehenderit eaque illum, quidem aspernatur."
-			/>
+			<div className="card-wrapper">
+				{projects.map((proj, index) => (
+					<ProjectCard key={index} {...proj} />
+				))}
+			</div>
 			<SplitHeading title="Events" />
-			<ProjectCard
-				source={blankImage}
-				error="Project Image"
-				title="Event-1"
-				short="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non."
-				long="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non. Est, velit error? In, accusantium. Maxime rerum nostrum, suscipit dolor ex, consequuntur dolorem quo alias quia ipsum reprehenderit eaque illum, quidem aspernatur."
-			/>
-			<ProjectCard
-				source={blankImage}
-				error="Project Image"
-				title="Event-2"
-				short="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non."
-				long="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, ea temporibus. In beatae iusto deleniti hic accusantium provident officiis possimus minima consectetur cum, voluptate magnam quod sunt asperiores vero non. Est, velit error? In, accusantium. Maxime rerum nostrum, suscipit dolor ex, consequuntur dolorem quo alias quia ipsum reprehenderit eaque illum, quidem aspernatur."
-			/>
+			<div className="card-wrapper">
+				{events.map((event, index) => (
+					<ProjectCard key={index} {...event} />
+				))}
+			</div>
 			<SplitHeading title="Our Core Members" />
+			<CoreMembers members={members} />
 			<Footer />
 		</>
 	);
