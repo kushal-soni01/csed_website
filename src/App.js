@@ -51,7 +51,7 @@ const members = [
 	},
 	{
 		name: "Deepansh Goyal",
-		post: "Organizer",
+		post: "Mentor",
 		img: profile,
 		quote: "Let’s build something amazing!",
 	},
@@ -66,7 +66,7 @@ const members = [
 function App() {
 	return (
 		<>
-			<Navbar title="CSED GLAU" />
+			<Navbar title="CSED CLUB GLAU" />
 			<TypewriterVideo />
 			<SplitHeading title="Projects" />
 			<div className="card-wrapper">
