@@ -2,6 +2,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TypewriterVideo from "./components/TypewriterVideo";
 import SplitHeading from "./components/SplitHeading";
+import AboutUs from "./components/AboutUs";
 import ProjectCard from "./components/ProjectCard";
 import blankImage from "./content/balnkImage.jpg";
 import CoreMembers from "./components/CoreMembers";
@@ -68,6 +69,8 @@ function App() {
 		<>
 			<Navbar title="CSED CLUB GLAU" />
 			<TypewriterVideo />
+			<SplitHeading title="About Us" />
+			<AboutUs />
 			<SplitHeading title="Projects" />
 			<div className="card-wrapper">
 				{projects.map((proj, index) => (
