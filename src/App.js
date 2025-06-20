@@ -2,12 +2,57 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TypewriterVideo from "./components/TypewriterVideo";
 import SplitHeading from "./components/SplitHeading";
+import { Users, Target, Award, Zap, Globe, Rocket } from "lucide-react";
 import AboutUs from "./components/AboutUs";
 import ProjectCard from "./components/ProjectCard";
 import blankImage from "./content/balnkImage.jpg";
 import CoreMembers from "./components/CoreMembers";
 import profile from "./content/profile.png";
 import Footer from "./components/Footer";
+
+const sectionsData = [
+	{
+		icon: <Target style={{ width: "100%", height: "100%" }} />,
+		title: "Our Mission",
+		content:
+			"Fostering entrepreneurship and innovation in the academic community by providing mentorship, resources, and a platform for aspiring entrepreneurs to transform their ideas into reality.",
+	},
+	{
+		icon: <Users style={{ width: "100%", height: "100%" }} />,
+		title: "Our Community",
+		content:
+			"A vibrant ecosystem of 5000+ students, 200+ mentors, and 50+ successful startups. We bring together passionate individuals who dare to dream big and work towards building the future.",
+	},
+	{
+		icon: <Award style={{ width: "100%", height: "100%" }} />,
+		title: "Our Impact",
+		content:
+			"Over 100 startups incubated, ₹50+ crores raised by our alumni ventures, and recognition as one of India's leading entrepreneurship cells with national and international accolades.",
+	},
+];
+
+const statsData = [
+	{
+		number: "10+",
+		label: "Years of Excellence",
+		icon: <Zap style={{ width: "100%", height: "100%" }} />,
+	},
+	{
+		number: "5000+",
+		label: "Community Members",
+		icon: <Users style={{ width: "100%", height: "100%" }} />,
+	},
+	{
+		number: "100+",
+		label: "Startups Incubated",
+		icon: <Rocket style={{ width: "100%", height: "100%" }} />,
+	},
+	{
+		number: "50+",
+		label: "Countries Reached",
+		icon: <Globe style={{ width: "100%", height: "100%" }} />,
+	},
+];
 
 const projects = [
 	{
@@ -70,7 +115,7 @@ function App() {
 			<Navbar title="CSED CLUB GLAU" />
 			<TypewriterVideo />
 			<SplitHeading title="About Us" />
-			<AboutUs />
+			<AboutUs sections={sectionsData} stats={statsData} />
 			<SplitHeading title="Projects" />
 			<div className="card-wrapper">
 				{projects.map((proj, index) => (
