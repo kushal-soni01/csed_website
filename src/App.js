@@ -5,10 +5,12 @@ import SplitHeading from "./components/SplitHeading";
 import { Users, Target, Award, Zap, Globe, Rocket } from "lucide-react";
 import AboutUs from "./components/AboutUs";
 import ProjectCard from "./components/ProjectCard";
+import HorizontalProjectCard from './components/HorizontalProjectCard';
 import blankImage from "./content/balnkImage.jpg";
 import CoreMembers from "./components/CoreMembers";
 import profile from "./content/profile.png";
 import Footer from "./components/Footer";
+
 
 const sectionsData = [
 	{
@@ -71,6 +73,29 @@ const projects = [
 	},
 ];
 
+const In_Progress_Projects = [
+    {
+      source: blankImage,
+      title: "In_Progress_Projects-1",
+      short: "Modern responsive e-commerce platform built with React and Node.js",
+      long: "A full-stack e-commerce solution featuring user authentication, payment integration, inventory management, and responsive design. Built using React, Node.js, MongoDB, and Stripe API for secure transactions.",
+      progress: 85,
+      progressLabel: "Development",
+      progressColor: "#4CAF50",
+      showProgress: true
+    },
+    {
+      source: blankImage,
+      title: "In_Progress_Projects-1",
+      short: "iOS and Android app with intuitive user interface",
+      long: "Cross-platform mobile application designed with user experience at the forefront. Features include offline functionality, push notifications, social media integration, and seamless synchronization across devices.",
+      progress: 70,
+      progressLabel: "Development",
+      progressColor: "#2196F3",
+      showProgress: true
+    }
+];
+
 const events = [
 	{
 		source: blankImage,
@@ -99,7 +124,7 @@ const members = [
 		name: "Deepansh Goyal",
 		post: "Mentor",
 		img: profile,
-		quote: "Let’s build something amazing!",
+		quote: "Let's build something amazing!",
 	},
 	{
 		name: "Sparsh Sharma",
@@ -114,7 +139,7 @@ function App() {
 		<>
 			<Navbar title="CSED CLUB GLAU" />
 			<TypewriterVideo />
-			<SplitHeading title="About Us" />
+			
 			<AboutUs sections={sectionsData} stats={statsData} />
 			<SplitHeading title="Projects" />
 			<div className="card-wrapper">
@@ -122,6 +147,12 @@ function App() {
 					<ProjectCard key={index} {...proj} />
 				))}
 			</div>
+			<SplitHeading title="In_Progress_Projects" />
+			<div className="horizontal-card-wrapper">
+        {In_Progress_Projects.map((In_Progress_Projects, index) => (
+          <HorizontalProjectCard key={index}{...In_Progress_Projects} />
+        ))}
+      </div>
 			<SplitHeading title="Events" />
 			<div className="card-wrapper">
 				{events.map((event, index) => (

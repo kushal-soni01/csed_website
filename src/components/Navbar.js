@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "D:/CSED/csed_website/src/content/Logo.png";
+import logo from "../content/Logo.png";
 
 export default function Navbar(props) {
 	return (
