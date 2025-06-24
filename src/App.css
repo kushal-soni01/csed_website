@@ -176,7 +176,6 @@ nav {
 	padding: 20px;
 }
 
-
 /* horizontal-card.css */
 .horizontal-card-container {
 	width: 60%;
@@ -314,26 +313,35 @@ nav {
 
 .progress-bar {
 	height: 100%;
-	background: linear-gradient(90deg, #4CAF50, #45a049);
+	background: linear-gradient(90deg, #4caf50, #45a049);
 	border-radius: 4px;
 	transition: width 0.8s ease-in-out;
 	position: relative;
 }
 
 .progress-bar::after {
-	content: '';
+	content: "";
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.3),
+		transparent
+	);
 	animation: shimmer 2s infinite;
 }
 
 @keyframes shimmer {
-	0% { transform: translateX(-100%); }
-	100% { transform: translateX(100%); }
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
 }
 
 .horizontal-card-wrapper {
@@ -362,23 +370,23 @@ nav {
 		flex: 1 1 350px;
 		height: 300px;
 	}
-	
+
 	.horizontal-card-front {
 		flex-direction: column;
 		text-align: center;
 	}
-	
+
 	.horizontal-card-image {
 		width: 100%;
 		height: 40%;
 		margin-right: 0;
 		margin-bottom: 15px;
 	}
-	
+
 	.horizontal-card-content {
 		height: auto;
 	}
-	
+
 	.progress-section {
 		margin-top: 15px;
 		padding-top: 10px;
@@ -392,7 +400,7 @@ nav {
 		margin: 10px;
 		height: 350px;
 	}
-	
+
 	.horizontal-card-wrapper {
 		gap: 15px;
 		padding: 15px;

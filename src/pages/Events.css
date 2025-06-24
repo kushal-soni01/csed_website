@@ -1,0 +1,54 @@
+/* Styles to be applied to all body */
+body {
+	text-align: center;
+	font-family: "Ubuntu", sans-serif;
+	background-color: hsla(36, 33%, 97%, 0.634);
+	user-select: none;
+}
+
+/* Navigation Bar */
+nav {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 2px solid black;
+	height: 4.688rem;
+	div {
+		margin: 20px;
+	}
+
+	.logo {
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		position: relative;
+		top: -10px;
+	}
+
+	.logo img {
+		height: 40px;
+		margin: 0 6px;
+	}
+	.pages,
+	.logo {
+		color: black;
+		text-decoration: none;
+		margin: 0 10px;
+		padding: 0 5px;
+		font-size: 20px;
+		font-weight: bold;
+		border-radius: 5px;
+		display: inline-block;
+		transition: all 0.3s ease 0s;
+	}
+	.pages:hover {
+		border-bottom: 3px solid rgb(86, 86, 86);
+		transform: translateY(-3px);
+	}
+	.pages span {
+		display: inline-block;
+		transition: all 0.3s linear 0s;
+	}
+	.pages span:hover {
+		color: rgb(86, 86, 86);
+	}
+}
