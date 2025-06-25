@@ -21,7 +21,7 @@ export default function Navbar(props) {
 				<Link to="/projects" className="pages" id="page-4">
 					<span>Projects</span>
 				</Link>
-				<Link to="events" className="pages" id="page-5">
+				<Link to="/events" className="pages" id="page-5">
 					<span>Events</span>
 				</Link>
 				<Link to="/newsletter" className="pages" id="page-6">
