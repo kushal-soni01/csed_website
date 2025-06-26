@@ -605,3 +605,649 @@ nav {
 	outline: 2px solid #3b82f6;
 	outline-offset: 2px;
   }
+
+  /* CompletedEventCard.css */
+
+/* General Body Styles for better presentation in a full app */
+body {
+    font-family: 'Inter', sans-serif; /* Or any sans-serif font */
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* --- Common Icon Styling --- */
+  /* This class will apply to most Lucide icons for alignment */
+  .card-icon,
+  .tab-icon,
+  .perk-icon,
+  .social-icon,
+  .section-heading-icon {
+    display: inline-block; /* Ensure they sit next to text properly */
+    vertical-align: middle; /* Vertically align with text */
+    margin-right: 8px; /* Default spacing to the right of icons */
+    flex-shrink: 0; /* Prevent shrinking in flex containers */
+  }
+  
+  /* Override specific margins where needed */
+  .perk-icon {
+    margin-right: 10px; /* Keep a bit more space for perk icons */
+    margin-top: 2px; /* Slight vertical adjustment */
+  }
+  .social-icon {
+    margin-right: 0; /* No margin right for social icons, gap handles it */
+  }
+  .section-heading-icon {
+    margin-right: 12px; /* More space for larger heading icons */
+    position: relative; /* For fine-tuning position if needed */
+    top: -2px; /* Adjust vertical alignment for larger icons */
+  }
+  
+  /* Main Card Design */
+  .event-card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 380px; /* Adjust this value to control the 'small and sleek' size */
+    width: 100%; /* Ensures it fills its grid cell up to max-width */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    height: 180px; /* Experiment with this value to get roughly half the height */
+  }
+  
+  .event-card:hover {
+    transform: translateY(-5px); /* Subtle lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .event-card-image {
+    width: 40%; /* Image on the left */
+    flex-shrink: 0; /* Prevent image from shrinking */
+  }
+  
+  .event-card-image img {
+    width: 100%;
+    height: 100%; /* Make image fill its container, which is now constrained by .event-card height */
+    object-fit: cover; /* Ensures image covers area without distortion */
+    display: block; /* Removes extra space below inline images */
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: 2px solid #ddd; /* A light grey border */
+  }
+  
+  .event-card-content {
+    padding: 10px; /* Further reduced padding from 15px */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes 'More Info' to bottom */
+    width: 60%; /* Text content on the right */
+    overflow: hidden;
+  }
+  
+  .event-card-content h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.2em; /* Slightly reduced font size for title */
+    margin-bottom: 5px; /* Reduced from 8px */
+    line-height: 1.2; /* Tighten line height */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .event-date {
+    color: #666;
+    font-size: 0.8em; /* Slightly reduced font size for date */
+    margin-bottom: 5px; /* Reduced from 8px */
+    display: flex; /* Make them flex to align icon and text */
+    align-items: center;
+  }
+  
+  .event-summary {
+    color: #555;
+    font-size: 0.9em; /* Slightly reduced font size for summary */
+    line-height: 1.4; /* Adjusted line height */
+    flex-grow: 1; /* Allows summary to take up available space */
+    margin-bottom: 10px; /* Reduced from 12px */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit summary to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .more-info-button {
+    align-self: flex-end; /* Aligns to bottom-right within its flex container */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 10px; /* Further slightly reduced button padding */
+    border-radius: 4px; /* Slightly smaller border radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    font-size: 0.85em; /* Slightly smaller font for button */
+  }
+  
+  .more-info-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Lighter hover shadow */
+  }
+  
+  .more-info-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+  
+  /* Popup Card (Modal) */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Dimmed background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out; /* Fade-in animation for overlay */
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    /* Updated max-width to make the modal wider */
+    max-width: 95vw; /* Wider modal for more content */
+    max-height: 90vh; /* Max height to allow scrolling */
+    overflow-y: auto; /* Enable scrolling for long content */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease-out; /* Slide-in animation for modal content */
+    display: flex; /* Flex container for modal content */
+    flex-direction: column; /* Stack elements vertically */
+  
+    /* Set a specific width for better control on larger screens, ensuring 3 photos can fit */
+    width: min(95vw, 1000px); /* Use min to ensure it doesn't get too wide on very large screens */
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.2s ease;
+    line-height: 1; /* Keep button tight to icon */
+    padding: 0; /* Remove default button padding */
+  }
+  
+  .modal-close-button:hover {
+    color: #333;
+  }
+  
+  /* Tab Navigation */
+  .modal-tabs {
+    display: flex;
+    justify-content: center; /* Center the tabs */
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    gap: 5px; /* Space between tabs */
+    overflow-x: auto; /* Allow horizontal scrolling on small screens */
+    white-space: nowrap; /* Prevent tabs from wrapping */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  
+    padding-bottom: 10px;
+    min-height: 50px;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+  
+  .tab-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1em;
+    color: #555;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    flex-shrink: 0;
+    margin-bottom: -1px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .tab-button.active {
+    color: #007bff;
+    font-weight: bold;
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid transparent;
+    transform: translateY(1px);
+    z-index: 1;
+  }
+  
+  .tab-button:not(.active):hover {
+    background-color: #f7f7f7;
+    color: #007bff;
+  }
+  
+  /* Tab Content Container */
+  .tab-content-container {
+    flex-grow: 1;
+    padding-top: 10px;
+  }
+  
+  /* Styles for individual modal sections (now within tabs) */
+  .modal-tab-section {
+    padding-bottom: 15px;
+  }
+  
+  .modal-tab-section:last-child {
+    padding-bottom: 0;
+  }
+  
+  .modal-tab-section h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Styles for structured description parts (within Description tab) */
+  .modal-tab-section .description-heading {
+    font-size: 1.4em;
+    color: #0056b3;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+  
+  .modal-tab-section .brief-description {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  .modal-tab-section .perks-section {
+    background-color: #e9f7ff;
+    border-left: 5px solid #007bff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+  
+  .modal-tab-section .perks-title {
+    font-size: 1.2em;
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .modal-tab-section .perks-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  .modal-tab-section .perk-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    color: #333;
+    line-height: 1.4;
+    gap: 10px;
+  }
+  
+  .modal-tab-section .perk-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Speaker Info Section */
+  .speaker-sub-heading {
+    font-size: 1.3em;
+    color: #0056b3;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .speakers-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .speaker-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+  }
+  
+  .speaker-item:hover {
+    transform: translateY(-3px);
+  }
+  
+  .speaker-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #007bff;
+    flex-shrink: 0;
+    margin-right: 15px;
+  }
+  
+  .speaker-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .speaker-details h4 {
+    margin: 0;
+    color: #444;
+    font-size: 1.1em;
+  }
+  
+  .speaker-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #777;
+    font-size: 0.95em;
+  }
+  
+  .speaker-bio {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .speaker-social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .speaker-social-links a {
+    color: #007bff;
+    transition: color 0.2s ease;
+    line-height: 1;
+  }
+  
+  .speaker-social-links a:hover {
+    color: #0056b3;
+  }
+  
+  
+  /* Event Photos Section */
+  .event-photos-grid {
+    display: grid;
+    /* Updated grid to explicitly aim for 3 columns on larger screens */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted minmax to allow 3 columns within the wider modal */
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .photo-gallery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .event-photo-thumbnail {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    margin-bottom: 5px;
+  }
+  
+  .event-photo-thumbnail:hover {
+    transform: scale(1.03);
+  }
+  
+  .photo-caption {
+    font-size: 0.85em;
+    color: #666;
+    margin: 0;
+    padding: 0 5px;
+    line-height: 1.3;
+  }
+  
+  /* Sponsors Section */
+  .sponsor-tier-heading {
+    font-size: 1.3em;
+    color: #0056b3;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sponsors-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .sponsors-list:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  
+  .sponsor-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s ease;
+  }
+  
+  .sponsor-item:hover {
+    transform: translateY(-3px);
+  }
+  
+  .sponsor-logo {
+    max-height: 60px;
+    max-width: 120px;
+    object-fit: contain;
+    margin-bottom: 5px;
+  }
+  
+  .sponsor-name {
+    font-size: 0.9em;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+  }
+  
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* Responsiveness for modal and internal card content */
+  @media (max-width: 768px) {
+    .event-card {
+      flex-direction: column;
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .event-card-image,
+    .event-card-content {
+      width: 100%;
+    }
+  
+    .event-card-image img {
+      height: 120px;
+      border-radius: 8px 8px 0 0;
+      border: 2px solid #ddd;
+      border-bottom: none;
+    }
+  
+    .event-card-content {
+      padding: 10px;
+    }
+  
+    .event-card-content h3 {
+      font-size: 1.3em;
+    }
+  
+    .event-date, .event-summary {
+      font-size: 0.9em;
+    }
+  
+    .more-info-button {
+      padding: 8px 12px;
+      font-size: 0.9em;
+    }
+  
+    .modal-content {
+      max-width: 95vw;
+      padding: 20px 15px;
+      /* Ensure width is still managed on smaller screens */
+      width: auto;
+    }
+  
+    .modal-tabs {
+      justify-content: flex-start;
+      padding: 0 5px 10px 5px;
+    }
+  
+    .tab-button {
+      padding: 10px 15px;
+      font-size: 0.9em;
+    }
+  
+    .speakers-list {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  
+    .speaker-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .speaker-photo {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    .speaker-details {
+      align-items: center;
+    }
+  
+    .event-photos-grid {
+      /* Adjusted for mobile: allow 2 columns of slightly larger images */
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+  
+    .event-photo-thumbnail {
+      /* Adjusted for mobile: maintain scale relative to desktop, but within mobile constraints */
+      height: 140px;
+    }
+  
+    .sponsors-list {
+      gap: 15px;
+    }
+  
+    .sponsor-logo {
+      max-height: 50px;
+      max-width: 100px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .event-card-content h3 {
+      font-size: 1.2em;
+    }
+    .event-summary {
+      font-size: 0.85em;
+    }
+    .modal-content h2 {
+      font-size: 1.6em;
+    }
+    .modal-close-button {
+      font-size: 1.8em;
+    }
+    .modal-tab-section h3 {
+      font-size: 1.3em;
+    }
+    .description-heading, .speaker-details h4, .perks-title, .sponsor-tier-heading, .speaker-sub-heading {
+      font-size: 1.1em;
+    }
+    .event-photos-grid {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+  
+    .event-photo-thumbnail {
+      height: 120px;
+    }
+  }
