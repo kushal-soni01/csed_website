@@ -1,4 +1,3 @@
-import "./Home.css";
 import TypewriterVideo from "../components/TypewriterVideo";
 import SplitHeading from "../components/SplitHeading";
 import { Users, Target, Award, Zap, Globe, Rocket } from "lucide-react";

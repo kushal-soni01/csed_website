@@ -2,16 +2,24 @@
 body {
 	text-align: center;
 	font-family: "Ubuntu", sans-serif;
-	background-color: hsla(36, 33%, 97%, 0.634);
+	background-color: hsla(0, 0%, 14%, 0.822);
 	user-select: none;
 }
 
 /* Navigation Bar */
 nav {
+	z-index: 1000;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	height: 4.688rem;
+	backdrop-filter: blur(10px);
+	transition: all 0.3s ease;
+	background-color: #ffffffb3;
+	box-shadow: inset 0px 0px 15px 5px transparent;
 	display: flex;
 	justify-content: space-between;
-	border-bottom: 2px solid black;
-	height: 4.688rem;
+	border-bottom: 2px solid transparent;
 	div {
 		margin: 20px;
 	}
@@ -56,7 +64,7 @@ nav {
 /* TypewriterVideo.js */
 .effect-video {
 	position: relative;
-	height: 75vh;
+	height: 90vh;
 	width: 100%;
 	overflow: hidden;
 	.bg-video {
@@ -115,7 +123,7 @@ nav {
 	.card-container.hovered {
 		transform: translateY(-10px);
 		box-shadow: 0 16px 24px rgba(0, 0, 0, 0.3);
-		background-color: #f0f0f0;
+		background-color: #232323;
 		border-radius: 15px;
 	}
 
