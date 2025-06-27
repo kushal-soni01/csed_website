@@ -1,30 +1,7 @@
 import React, { useState } from 'react';
 import "./Events.css";
 import SplitHeading from "../components/SplitHeading";
-import EventCard from '../components/RegistrationEventCard';
 import CompletedEventCard from '../components/CompletedEventCard';
-
-const events = [
-	{
-	  id: 1,
-	  title: "Tech Innovation Summit 2025",
-	  venue: "Convention Center, Downtown Mumbai",
-	  date: "July 15, 2025",
-	  time: "9:00 AM - 6:00 PM",
-	  fee: "₹2,999",
-	  introduction: "Join industry leaders and innovators for a day of cutting-edge technology discussions and networking opportunities.",
-	  shortDescription: "Explore the latest trends in AI, blockchain, and digital transformation with expert speakers and interactive workshops. Connect with like-minded professionals and discover the future of technology.",
-	  perks: [
-		"Networking lunch with industry leaders",
-		"Exclusive access to tech demos and prototypes",
-		"Certificate of participation",
-		"Premium swag bag with tech gadgets",
-		"Access to recorded sessions for 6 months",
-		"VIP networking cocktail hour"
-	  ],
-	  poster: "https://images.unsplash.com/photo-1515378791036-0648a814c963?w=200&h=300&fit=crop&crop=center"
-	}
-]
 
 const sampleEventWithAllDetails = {
     id: 1,
@@ -154,21 +131,15 @@ const sampleEventWithAllDetails = {
 function Events() {
 	return (
 		<>
-			<SplitHeading title="Upcoming Event" />
-			{events.map(event => (
-				<EventCard
-					key={event.id}
-					event={event}
-				/>
-			))}
+			
 			<div className="App" style={{ padding: '20px' }}>
       			<h1 style={{ textAlign: 'center', color: '#2c3e50', marginBottom: '30px', fontSize: '2.5em' }}>Completed Events Showcase 🌟</h1>
-    			<div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '30px' }}>
+    			  <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '30px' }}>
         			<CompletedEventCard event={sampleEventWithAllDetails} />
       				<CompletedEventCard event={eventWithoutSomeDetails} />
       				<CompletedEventCard event={eventOldDescription} />
-     			 </div>
-    		</div>
+     			  </div>
+    	</div>
 			<div>Hello World</div>
 			<div>Hello World</div>
 			<div>Hello World</div>
