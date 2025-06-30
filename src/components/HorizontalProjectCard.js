@@ -1,5 +1,5 @@
-// HorizontalProjectCard.js
 import React, { useState } from "react";
+import "./HorizontalProjectCard.css";
 
 export default function HorizontalProjectCard(props) {
 	const [flipped, setFlipped] = useState(false);
@@ -21,7 +21,7 @@ export default function HorizontalProjectCard(props) {
 		progress = 0,
 		progressLabel = "Progress",
 		progressColor = "#4CAF50",
-		showProgress = true
+		showProgress = true,
 	} = props;
 
 	return (
@@ -43,9 +43,11 @@ export default function HorizontalProjectCard(props) {
 					<div className="horizontal-card-content">
 						<div className="horizontal-card-text">
 							<h3 className="horizontal-card-title">{title}</h3>
-							<p className="horizontal-card-description">{short}</p>
+							<p className="horizontal-card-description">
+								{short}
+							</p>
 						</div>
-						
+
 						{showProgress && (
 							<div className="progress-section">
 								<div className="progress-label">
@@ -53,11 +55,14 @@ export default function HorizontalProjectCard(props) {
 									<span>{progress}%</span>
 								</div>
 								<div className="progress-bar-container">
-									<div 
+									<div
 										className="progress-bar"
-										style={{ 
-											width: `${Math.min(Math.max(progress, 0), 100)}%`,
-											background: `linear-gradient(90deg, ${progressColor}, ${progressColor}dd)`
+										style={{
+											width: `${Math.min(
+												Math.max(progress, 0),
+												100
+											)}%`,
+											background: `linear-gradient(90deg, ${progressColor}, ${progressColor}dd)`,
 										}}
 									></div>
 								</div>
@@ -65,7 +70,7 @@ export default function HorizontalProjectCard(props) {
 						)}
 					</div>
 				</div>
-				
+
 				<div className="horizontal-card-back" onClick={handleClick}>
 					<h3 className="horizontal-card-title">{title}</h3>
 					<p className="horizontal-card-description">{long}</p>

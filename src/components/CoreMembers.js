@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./CoreMembers.css";
 export default function CoreMembers({ members }) {
 	return (
 		<section className="core-members">

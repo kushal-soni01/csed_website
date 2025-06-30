@@ -1,6 +1,6 @@
 // EventForm.js
 import React, { useState } from "react";
-import "../pages/Events.css";
+import "./EventForm.css";
 import { X } from "lucide-react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

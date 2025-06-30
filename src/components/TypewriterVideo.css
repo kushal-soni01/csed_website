@@ -1,0 +1,43 @@
+.effect-video {
+	position: relative;
+	height: 90vh;
+	width: 100%;
+	overflow: hidden;
+	.bg-video {
+		background-color: aqua;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0.2;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 1;
+	}
+	.overlay {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		height: 5rem;
+		line-height: 5rem;
+		transform: translate(-50%, -50%);
+		color: black;
+		white-space: nowrap;
+		overflow: hidden;
+		border-right: 3px solid rgba(0, 0, 0, 0.471);
+		animation: blinkCursor 1000ms ease infinite forwards alternate;
+		z-index: 2;
+		text-align: center;
+		.typewriter {
+			font-family: "Ubuntu", sans-serif;
+			font-weight: bolder;
+			font-size: 4rem;
+			letter-spacing: 0.25rem;
+		}
+	}
+}
+@keyframes blinkCursor {
+	50% {
+		border-color: transparent;
+	}
+}

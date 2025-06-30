@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import EventHero from "../components/EventHero";
 import EventForm from "../components/EventForm";
-import "./Events.css";
 import CompletedEventCard from "../components/CompletedEventCard";
 
 const eventData = {

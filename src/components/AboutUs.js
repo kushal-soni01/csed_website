@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import "./AboutUs.css";
 import { ChevronRight } from "lucide-react";
 
 export default function AboutUs({

@@ -1,7 +1,7 @@
 // components/EventHero.js
+import "./EventHero.css";
 import React from "react";
 import { CalendarDays } from "lucide-react";
-import "../pages/Events.css";
 
 function EventHero({
 	name,

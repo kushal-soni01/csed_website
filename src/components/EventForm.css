@@ -1,0 +1,111 @@
+.form-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(6px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	opacity: 1;
+	transition: opacity 0.4s ease;
+}
+
+.form-overlay.hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.form-card {
+	position: relative;
+	max-width: 500px;
+	width: 90%;
+	padding: 2rem;
+	border-radius: 1rem;
+	background: url("https://source.unsplash.com/600x400/?abstract,blur")
+		center/cover no-repeat;
+	backdrop-filter: blur(10px);
+	overflow: hidden;
+	z-index: 1;
+	transform: scale(1);
+	opacity: 1;
+	transition: all 0.4s ease;
+}
+
+.form-card.hidden {
+	transform: scale(0.8);
+	opacity: 0;
+}
+
+.form-card::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.6);
+	border-radius: 1rem;
+	z-index: 0;
+}
+
+.form-card h2,
+.form-card p,
+.form-card form,
+.form-card .close-btn {
+	position: relative;
+	z-index: 1;
+	color: #fff;
+}
+
+.form-card form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.input-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.input-group input {
+	padding: 0.75rem 1rem;
+	border: 2px solid transparent;
+	border-radius: 0.5rem;
+	font-size: 1rem;
+	transition: border 0.3s;
+}
+
+.input-group input.error {
+	border: 2px solid #f87171;
+}
+
+.error-text {
+	color: #f87171;
+	font-size: 0.85rem;
+	margin-top: 0.25rem;
+}
+
+.form-card button[type="submit"] {
+	padding: 0.75rem 1.5rem;
+	background: linear-gradient(to right, #3b82f6, #8b5cf6);
+	border: none;
+	border-radius: 9999px;
+	color: white;
+	font-weight: 600;
+	cursor: pointer;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-card button[type="submit"]:hover {
+	transform: scale(1.05);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.close-btn {
+	position: absolute !important;
+	top: 1rem;
+	right: 1rem;
+	background: none;
+	border: none;
+	color: #fff;
+	cursor: pointer !important;
+}

@@ -6,8 +6,8 @@ import AboutUs from "../components/AboutUs";
 import ProjectCard from "../components/ProjectCard";
 import HorizontalProjectCard from "../components/HorizontalProjectCard";
 import blankImage from "../content/balnkImage.jpg";
-import CoreMembers from "../components/CoreMembers";
-import profile from "../content/profile.png";
+// import profile from "../content/profile.png";
+// import CoreMembers from "../components/CoreMembers";
 
 const sectionsData = [
 	{
@@ -115,26 +115,26 @@ const events = [
 	},
 ];
 
-const members = [
-	{
-		name: "Shubh Singhal",
-		post: "President",
-		img: profile,
-		quote: "Leadership is action, not position.",
-	},
-	{
-		name: "Deepansh Goyal",
-		post: "Mentor",
-		img: profile,
-		quote: "Let's build something amazing!",
-	},
-	{
-		name: "Sparsh Sharma",
-		post: "Vice-President",
-		img: profile,
-		quote: "Together, we grow and innovate.",
-	},
-];
+// const members = [
+// 	{
+// 		name: "Shubh Singhal",
+// 		post: "President",
+// 		img: profile,
+// 		quote: "Leadership is action, not position.",
+// 	},
+// 	{
+// 		name: "Deepansh Goyal",
+// 		post: "Mentor",
+// 		img: profile,
+// 		quote: "Let's build something amazing!",
+// 	},
+// 	{
+// 		name: "Sparsh Sharma",
+// 		post: "Vice-President",
+// 		img: profile,
+// 		quote: "Together, we grow and innovate.",
+// 	},
+// ];
 
 function Home() {
 	return (
@@ -153,8 +153,8 @@ function Home() {
 					<ProjectCard key={index} {...event} />
 				))}
 			</div>
-			<SplitHeading title="Our Core Members" />
-			<CoreMembers members={members} />
+			{/* <SplitHeading title="Our Core Members" />
+			<CoreMembers members={members} /> */}
 		</>
 	);
 }
