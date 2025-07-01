@@ -4,6 +4,7 @@ import { Users, Target, Award, Zap, Globe, Rocket } from "lucide-react";
 import AboutUs from "../components/AboutUs";
 import ProjectCard from "../components/ProjectCard";
 import HorizontalProjectCard from "../components/HorizontalProjectCard";
+import InfiniteScrollMarquee from "../components/InfiniteScrollMarquee";
 import blankImage from "../content/balnkImage.jpg";
 import profile from "../content/profile.png";
 // import CoreMembers from "../components/CoreMembers";
@@ -114,6 +115,49 @@ const events = [
 	},
 ];
 
+const teamMembers = [
+    {
+      id: 1,
+      image: blankImage,
+      text: "Sarah Johnson"
+    },
+    {
+      id: 2,
+      image: blankImage,
+      text: "Mike Chen"
+    },
+    {
+      id: 3,
+      image: blankImage,
+      text: "Emma Wilson"
+    },
+    {
+      id: 4,
+      image: blankImage,
+      text: "David Park"
+    },
+    {
+      id: 5,
+      image: blankImage,
+      text: "Lisa Rodriguez"
+    },
+    {
+      id: 6,
+      image: blankImage,
+      text: "Alex Thompson"
+    },
+    // Add more items here as needed
+    {
+      id: 7,
+      image: blankImage,
+      text: "John Smith"
+    },
+    {
+      id: 8,
+      image: blankImage,
+      text: "Anna Davis"
+    }
+  ];
 
 
 // const members = [
@@ -154,7 +198,12 @@ function Home() {
 					<ProjectCard key={index} {...event} />
 				))}
 			</div>
-			
+			<InfiniteScrollMarquee 
+				items={teamMembers}
+				title="Our Amazing Team"
+				subtitle="Meet the talented people who make it all happen"
+				speed={0.5}
+			/>
 			{/* <SplitHeading title="Our Core Members" />
 			<CoreMembers members={members} /> */}
 		</>
