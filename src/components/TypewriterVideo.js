@@ -63,7 +63,7 @@ export default function TypewriterVideo() {
 				<source src="/" type="video/mp4" />
 			</video>
 
-			<div className="overlay">
+			<div className="typeWriter-overlay">
 				<h1 className="typewriter">{showText ? text : ""}</h1>
 			</div>
 		</div>
