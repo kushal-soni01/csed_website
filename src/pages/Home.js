@@ -5,6 +5,7 @@ import AboutUs from "../components/AboutUs";
 import ProjectCard from "../components/ProjectCard";
 import HorizontalProjectCard from "../components/HorizontalProjectCard";
 import blankImage from "../content/balnkImage.jpg";
+import Sponsor from "../components/Sponsor";
 // import profile from "../content/profile.png";
 // import CoreMembers from "../components/CoreMembers";
 
@@ -114,6 +115,18 @@ const events = [
 	},
 ];
 
+const Sponsors = [
+	{ content: "Sponsor 1" },
+	{ content: "Sponsor 2" },
+	{ content: "Sponsor 3" },
+	{ content: "Sponsor 4" },
+	{ content: "Sponsor 5" },
+	{ content: "Sponsor 6" },
+	{ content: "Sponsor 7" },
+	{ content: "Sponsor 8" },
+	{ content: "Sponsor 9" },
+];
+
 // const members = [
 // 	{
 // 		name: "Shubh Singhal",
@@ -151,6 +164,18 @@ function Home() {
 				{events.map((event, index) => (
 					<ProjectCard key={index} {...event} />
 				))}
+			</div>
+			<SplitHeading title="Our Sponsors" />
+			<div style={{ height: "35vh", position: "relative" }}>
+				<Sponsor
+					items={Sponsors}
+					isTilted={false}
+					tiltDirection="right"
+					autoplay={true}
+					autoplaySpeed={1.5}
+					autoplayDirection="down"
+					pauseOnHover={true}
+				/>
 			</div>
 			{/* <SplitHeading title="Our Core Members" />
 			<CoreMembers members={members} /> */}
