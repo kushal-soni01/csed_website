@@ -6,7 +6,7 @@ import ProjectCard from "../components/ProjectCard";
 import HorizontalProjectCard from "../components/HorizontalProjectCard";
 import blankImage from "../content/balnkImage.jpg";
 import Sponsor from "../components/Sponsor";
-// import profile from "../content/profile.png";
+import profile from "../content/profile.png";
 // import CoreMembers from "../components/CoreMembers";
 
 const sectionsData = [
@@ -116,15 +116,132 @@ const events = [
 ];
 
 const Sponsors = [
-	{ content: "Sponsor 1" },
-	{ content: "Sponsor 2" },
-	{ content: "Sponsor 3" },
-	{ content: "Sponsor 4" },
-	{ content: "Sponsor 5" },
-	{ content: "Sponsor 6" },
-	{ content: "Sponsor 7" },
-	{ content: "Sponsor 8" },
-	{ content: "Sponsor 9" },
+	{
+		content: (
+			<img
+				src={profile}
+				alt="Sponsor1"
+				style={{
+					width: "100%",
+					height: "100%",
+					objectFit: "cover",
+					borderRadius: "50%",
+				}}
+			/>
+		),
+	},
+	{
+		content: (
+			<img
+				src={profile}
+				alt="Sponsor2"
+				style={{
+					width: "100%",
+					height: "100%",
+					objectFit: "cover",
+					borderRadius: "50%",
+				}}
+			/>
+		),
+	},
+	{
+		content: (
+			<img
+				src={profile}
+				alt="Sponsor3"
+				style={{
+					width: "100%",
+					height: "100%",
+					objectFit: "cover",
+					borderRadius: "50%",
+				}}
+			/>
+		),
+	},
+	{
+		content: (
+			<img
+				src={profile}
+				alt="Sponsor4"
+				style={{
+					width: "100%",
+					height: "100%",
+					objectFit: "cover",
+					borderRadius: "50%",
+				}}
+			/>
+		),
+	},
+	{
+		content: (
+			<img
+				src={profile}
+				alt="Sponsor5"
+				style={{
+					width: "100%",
+					height: "100%",
+					objectFit: "cover",
+					borderRadius: "50%",
+				}}
+			/>
+		),
+	},
+	{
+		content: (
+			<img
+				src={profile}
+				alt="Sponsor6"
+				style={{
+					width: "100%",
+					height: "100%",
+					objectFit: "cover",
+					borderRadius: "50%",
+				}}
+			/>
+		),
+	},
+	{
+		content: (
+			<img
+				src={profile}
+				alt="Sponsor7"
+				style={{
+					width: "100%",
+					height: "100%",
+					objectFit: "cover",
+					borderRadius: "50%",
+				}}
+			/>
+		),
+	},
+	{
+		content: (
+			<img
+				src={profile}
+				alt="Sponsor8"
+				style={{
+					width: "100%",
+					height: "100%",
+					objectFit: "cover",
+					borderRadius: "50%",
+				}}
+			/>
+		),
+	},
+	{
+		content: (
+			<img
+				src={profile}
+				alt="Sponsor9"
+				style={{
+					width: "100%",
+					height: "100%",
+					objectFit: "cover",
+					borderRadius: "50%",
+				}}
+			/>
+		),
+	},
 ];
 
 // const members = [
@@ -172,7 +289,7 @@ function Home() {
 					isTilted={false}
 					tiltDirection="right"
 					autoplay={true}
-					autoplaySpeed={1.5}
+					autoplaySpeed={1.75}
 					autoplayDirection="down"
 					pauseOnHover={true}
 				/>
