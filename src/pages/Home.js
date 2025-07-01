@@ -5,7 +5,6 @@ import AboutUs from "../components/AboutUs";
 import ProjectCard from "../components/ProjectCard";
 import HorizontalProjectCard from "../components/HorizontalProjectCard";
 import blankImage from "../content/balnkImage.jpg";
-import Sponsor from "../components/Sponsor";
 import profile from "../content/profile.png";
 // import CoreMembers from "../components/CoreMembers";
 
@@ -115,134 +114,7 @@ const events = [
 	},
 ];
 
-const Sponsors = [
-	{
-		content: (
-			<img
-				src={profile}
-				alt="Sponsor1"
-				style={{
-					width: "100%",
-					height: "100%",
-					objectFit: "cover",
-					borderRadius: "50%",
-				}}
-			/>
-		),
-	},
-	{
-		content: (
-			<img
-				src={profile}
-				alt="Sponsor2"
-				style={{
-					width: "100%",
-					height: "100%",
-					objectFit: "cover",
-					borderRadius: "50%",
-				}}
-			/>
-		),
-	},
-	{
-		content: (
-			<img
-				src={profile}
-				alt="Sponsor3"
-				style={{
-					width: "100%",
-					height: "100%",
-					objectFit: "cover",
-					borderRadius: "50%",
-				}}
-			/>
-		),
-	},
-	{
-		content: (
-			<img
-				src={profile}
-				alt="Sponsor4"
-				style={{
-					width: "100%",
-					height: "100%",
-					objectFit: "cover",
-					borderRadius: "50%",
-				}}
-			/>
-		),
-	},
-	{
-		content: (
-			<img
-				src={profile}
-				alt="Sponsor5"
-				style={{
-					width: "100%",
-					height: "100%",
-					objectFit: "cover",
-					borderRadius: "50%",
-				}}
-			/>
-		),
-	},
-	{
-		content: (
-			<img
-				src={profile}
-				alt="Sponsor6"
-				style={{
-					width: "100%",
-					height: "100%",
-					objectFit: "cover",
-					borderRadius: "50%",
-				}}
-			/>
-		),
-	},
-	{
-		content: (
-			<img
-				src={profile}
-				alt="Sponsor7"
-				style={{
-					width: "100%",
-					height: "100%",
-					objectFit: "cover",
-					borderRadius: "50%",
-				}}
-			/>
-		),
-	},
-	{
-		content: (
-			<img
-				src={profile}
-				alt="Sponsor8"
-				style={{
-					width: "100%",
-					height: "100%",
-					objectFit: "cover",
-					borderRadius: "50%",
-				}}
-			/>
-		),
-	},
-	{
-		content: (
-			<img
-				src={profile}
-				alt="Sponsor9"
-				style={{
-					width: "100%",
-					height: "100%",
-					objectFit: "cover",
-					borderRadius: "50%",
-				}}
-			/>
-		),
-	},
-];
+
 
 // const members = [
 // 	{
@@ -282,18 +154,7 @@ function Home() {
 					<ProjectCard key={index} {...event} />
 				))}
 			</div>
-			<SplitHeading title="Our Sponsors" />
-			<div style={{ height: "35vh", position: "relative" }}>
-				<Sponsor
-					items={Sponsors}
-					isTilted={false}
-					tiltDirection="right"
-					autoplay={true}
-					autoplaySpeed={1.75}
-					autoplayDirection="down"
-					pauseOnHover={true}
-				/>
-			</div>
+			
 			{/* <SplitHeading title="Our Core Members" />
 			<CoreMembers members={members} /> */}
 		</>
