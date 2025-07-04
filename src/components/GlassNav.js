@@ -24,9 +24,9 @@ const GlassNav = () => {
 		setIsDarkMode(!isDarkMode);
 	};
 
-	// const toggleMobileMenu = () => {
-	// 	setIsMobileMenuOpen(!isMobileMenuOpen);
-	// };
+	const toggleMobileMenu = () => {
+		setIsMobileMenuOpen(!isMobileMenuOpen);
+	};
 
 	return (
 		<div
@@ -120,7 +120,7 @@ const GlassNav = () => {
 						{/* Mobile Menu Button */}
 						<button
 							className="mobile-menu-button"
-							onClick={toggleMenu}
+							onClick={toggleMobileMenu}
 						>
 							<div
 								className={`hamburger ${
